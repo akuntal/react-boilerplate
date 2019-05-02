@@ -1,6 +1,10 @@
 {
-  "name": "react-splitter",
+  "name": "react-boilerplate",
   "version": "1.0.0",
+  "author": {
+    "email": "alok.kuntal@gmail.com",
+    "name": "Alok"
+  },
   "main": "index.js",
   "license": "MIT",
   "scripts": {
