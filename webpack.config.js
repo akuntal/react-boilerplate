@@ -1,8 +1,8 @@
-const webpack = require('webpack');
 const HtmlWepackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src',
+  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -12,7 +12,7 @@ module.exports = {
           {
             loader: 'babel-loader',
           },
-          'eslint-loader'
+          'eslint-loader',
         ],
       },
       {
