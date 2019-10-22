@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Provider } from 'react-redux';
 import { Router } from '@reach/router';
 import { store } from './store/store';
 import { Navbar } from './components/navbar';
-import { Home } from './pages/home';
 import { About } from './pages/about';
+
+const Home = lazy(() => import('./pages/home'));
 
 export const App = () => (
   <Provider store={store}>
     <Navbar />
-    <Router>
-      <Home path="home" />
-      <About path="about" />
-    </Router>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Router>
+        <Home path="home" />
+        <About path="about" />
+      </Router>
+    </Suspense>
   </Provider>
 );
