@@ -1,4 +1,6 @@
 const HtmlWepackPlugin = require('html-webpack-plugin');
+// const path = require('path');
+// const resolve = require('./webpack.config.resolve');
 
 module.exports = {
   entry: './src',
@@ -10,30 +12,30 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
-            loader: 'babel-loader',
+            loader: 'babel-loader'
           },
-          'eslint-loader',
-        ],
+          'eslint-loader'
+        ]
       },
       {
         test: /\.html$/,
         use: [
           {
             loader: 'html-loader',
-            options: { minimize: true },
-          },
-        ],
-      },
-    ],
+            options: { minimize: true }
+          }
+        ]
+      }
+    ]
   },
   plugins: [
     new HtmlWepackPlugin({
       template: './src/index.html',
-      filename: './index.html',
-    }),
+      filename: './index.html'
+    })
   ],
   devServer: {
     port: 3000,
-    historyApiFallback: true,
-  },
+    historyApiFallback: true
+  }
 };

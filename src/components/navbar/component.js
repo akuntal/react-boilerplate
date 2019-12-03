@@ -11,6 +11,9 @@ export const Navbar = () => (
       <li>
         <Link to="about">About</Link>
       </li>
+      <li>
+        <Link to="todos">Todos</Link>
+      </li>
     </S.Navbar>
   </S.NavbarContainer>
 );
